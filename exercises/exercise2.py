@@ -10,10 +10,7 @@ esta_lloviendo = True
 riego_activado = True
 
 # COMPLETAR - INICIO
-if (esta_lloviendo == True) or (riego_activado == True):
-    piso_mojado = True
-else:
-    piso_mojado = False
+piso_mojado = esta_lloviendo or riego_activado
 # COMPLETAR - FIN
 
 assert piso_mojado
@@ -29,10 +26,7 @@ lado_cuadrado = 5
 area_cuadrado = pow(lado_cuadrado, 2)
 
 # COMPLETAR - INICIO
-if not (area_cuadrado > 5) and (lado_cuadrado > 0):
-    area_mayor_a_cinco = False
-else:
-    area_mayor_a_cinco = True
+area_mayor_a_cinco = not(lado_cuadrado < 0 or area_cuadrado < 5) 
 # COMPLETAR - FIN
 
 assert area_mayor_a_cinco
@@ -47,10 +41,7 @@ numero_1 = 49
 numero_2 = 50
 
 # COMPLETAR - INICIO
-if (numero_1 % 7 == 0) and (numero_2 % 7 != 0):
-    resultado = True
-else:
-    resultado = False
+resultado = (numero_1 % 7 == 0) and (numero_2 % 7 != 0)
 # COMPLETAR - FIN
 
 assert resultado
@@ -69,12 +60,8 @@ variable_04 = "90"
 variable_05 = 100
 
 # COMPLETAR - INICIO
-if not {(variable_01 == False) or (variable_02 == False) 
-        or (variable_03 == 34) or (variable_04 == "90") 
-        or (variable_05 == 54)}:
-    resultado = False
-else:
-    resultado = variable_03
+resultado = ((variable_03 or variable_01 or not variable_02 or variable_04
+             or not variable_05))
 
 # COMPLETAR - FIN
 
